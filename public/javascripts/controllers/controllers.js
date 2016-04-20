@@ -1,4 +1,4 @@
-app.controller("MainController", function($scope, $http, breakService, $routeParams,$rootScope, $location, $auth){
+app.controller("MainController", function($scope, $http, userService, $routeParams,$rootScope, $location, $auth){
   $scope.login = function() {
        $auth.login($scope.user)
          .then(function() {
@@ -13,7 +13,7 @@ app.controller("MainController", function($scope, $http, breakService, $routePar
        $auth.authenticate(provider)
          .then(function(response) {
            console.log('You have successfully signed in with ' + provider + '!');
-           $location.path('/prtymain')
+           $location.path('/users')
          })
          .catch(function(error) {
            if (error.error) {
@@ -52,12 +52,19 @@ app.controller("MainController", function($scope, $http, breakService, $routePar
 
 });
 
-app.controller('signUpController', function($scope, info){
-
+app.controller('UserController', function($scope, $http, breakService, userService, $routeParams){
+  userService.validateUser().then(function(result){
+  $scope.user = result
+  console.log(result);
+  breakService.getUser().then(function(payload){
+    $scope.users = payload.data;
+  })
 })
 
-app.controller('UserController', function($scope, $http, breakService, $routeParams){
-
+$scope.logout = function(){
+  $auth.logout()
+  console.log("successfully logged out!");
+}
 })
 
 app.controller('MovesController', function($scope, $http, breakService, $routeParams){
