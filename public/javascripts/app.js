@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngResource','checklist-model', 'satellizer']);
+var app = angular.module("myApp", ['ngRoute', 'ngResource', 'checklist-model', 'satellizer']);
 
 
 app.config(function($routeProvider, $locationProvider, $authProvider) {
@@ -13,7 +13,7 @@ app.config(function($routeProvider, $locationProvider, $authProvider) {
         templateUrl: 'partials/splash.html',
         controller: 'MainController'
       })
-      .when('/users/:id', {
+      .when('/users', {
         templateUrl: 'partials/dashboard.html',
         controller: 'UserController'
       })

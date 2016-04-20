@@ -6,8 +6,8 @@ app.service('breakService', function($http){
     // return $http.get('https://breakitdown.herokuapp.com/moves')
   }
 
-  breakService.getUser = function(user_id){
-    return $http.get('http://localhost:3000/users/'+user_id, {method: "jsonp"})
+  breakService.getUser = function(){
+    return $http.get('http://localhost:3000/users')
     // return $http.get('https://breakitdown.herokuapp.com/users/'+user_id, {method: "jsonp"})
   }
 
