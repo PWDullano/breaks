@@ -16,19 +16,19 @@ app.config(function($routeProvider, $locationProvider, $authProvider) {
         templateUrl: 'partials/dashboard.html',
         controller: 'UserController'
       })
-      .when('/users/:id/sessions', {
+      .when('/sessions', {
         templateUrl: 'partials/sessions.html',
         controller: 'SessionController'
       })
-      .when('/users/:id/breakdown', {
+      .when('/breakdown', {
         templateUrl: 'partials/breakdown.html',
         controller: 'MovesController'
       })
-      .when('/users/:id/stripes', {
+      .when('/stripes', {
         templateUrl: 'partials/stripes.html',
         controller: 'StripesController'
       })
-      .when('/users/:id/faq', {
+      .when('/faq', {
         templateUrl: 'partials/faq.html',
         controller: 'MainController'
       })
