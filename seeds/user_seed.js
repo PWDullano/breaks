@@ -10,6 +10,7 @@ exports.seed = function(knex, Promise) {
       email: 'PWDullano@gmail.com',
       first_name: 'Patrick',
       last_name: 'Dullano',
-      name: 'Patrick Dullano'})
+      name: 'Patrick Dullano',
+      profile_image_url: 'woot'})
   );
 };
