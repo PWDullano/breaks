@@ -7,22 +7,22 @@ app.service('breakService', function($http){
   }
 
   breakService.getUser = function(){
-    // return $http.get('http://localhost:3000/users')
+    // return $http.get('http://localhost:3000/users',{method: "jsonp"})
     return $http.get('https://thebreaks.herokuapp.com/users/'+user_id, {method: "jsonp"})
   }
 
   breakService.getStripes = function(){
-    // return $http.get('http://localhost:3000/stripes')
+    // return $http.get('http://localhost:3000/stripes',{method: "jsonp"})
     return $http.get('https://thebreaks.herokuapp.com/stripes')
   }
 
   breakService.getSessions = function(){
-    // return $http.get('http://localhost:3000/sessions')
+    // return $http.get('http://localhost:3000/sessions',{method: "jsonp"})
     return $http.get('https://thebreaks.herokuapp.com/sessions')
   }
 
   breakService.newSession = function(data){
-    // return $http.post('http://localhost:3000/sessions', data)
+    // return $http.post('http://localhost:3000/sessions', data, {method: "jsonp"})
     return $http.post('https://thebreaks.herokuapp.com/sessions', data)
   }
 

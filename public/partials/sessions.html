@@ -10,7 +10,7 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
-        <li><a href="/sessions">Sessions</a></li>
+        <li><a href="/session">Sessions</a></li>
         <li><a href="/breakdown">Breakdown</a></li>
         <li><a href="/faq">F.A.Q</a></li>
         <li><a href = "/#/" ng-click ="logout()">Logout</a></li>
@@ -44,7 +44,7 @@
               <div class="span4 offset1">
                 <form ng-submit='createSession()'>
                   <label class="date"for="date"><h3>Date:</h3></label>
-                  <input type="text" name="date" ng-model="session.date" placeholder="6/24/2016">
+                  <input type="date" name="date" ng-model="session.date" placeholder="yyyy-MM-dd" required>
                   <button class="btn btn-large btn-success" type='submit' name='button'>Commit to session</button>
                   <br>
                   <br>
@@ -54,8 +54,8 @@
                   <br>
                   <div class='sessionMoves container'>
                     <div class='sessionMovesRow row'>
-                      <div class ='sessionMovesCollection col-sm-4 col-md-4' ng-repeat='move in movesCollection | filter:pizzle | orderBy:sortBy'>
-                        <input type="checkbox" checklist-model="session.focus" checklist-value="move.name" ng-click='check()'>
+                      <div class ='sessionMovesCollection col-sm-4 col-md-4' data-ng-model="move.selected" ng-repeat='move in movesCollection | filter:pizzle | orderBy:sortBy'>
+                        <input type="checkbox" checklist-model="session.focus" checklist-value="move.name" ng-click='check()' ng-required="isOptionsRequired()">
                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                         	<div class="flipper">
                               <div class="front">
@@ -84,7 +84,7 @@
 <div class='session container'>
   <div class='sessionRow row'>
     <div class ='sessionCollection col-sm-6 col-md-6' ng-repeat='session in sessionsCollection'>
-        <h1>{{session.date}}</h1>
+        <h1>{{session.date | date: "yyyy-MM-dd"}}</h1>
         <br>
         <u><h2>Focus</h2></u>
         <h3 class = 'sessionFocus'>{{session.focus}}</h3>
