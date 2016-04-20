@@ -45,16 +45,16 @@ router.post('/auth/facebook', function(req,res){
           user.email = profile.email
           user.first_name = profile.first_name
           user.last_name = profile.last_name
-          user.name = profile.name;
+          user.name = profile.name
           var token = createToken(user)
           Users().insert(user)
             .catch(function(error){
               console.log(error);
             }).then(function(){
               res.send({token: token})
+              console.log(user);
               res.redirect('/users')
             })
-
       })
     });
 })
@@ -66,12 +66,6 @@ router.post('/users', function(req,res){
     res.send(result)
   })
 })
-
-router.get('/users', function(req, res, next) {
-  Users().select().then(function(payload){
-    res.json(payload);
-  })
-});
 
 router.get('/moves', function(req, res, next) {
   Moves().select().then(function(payload){

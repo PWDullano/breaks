@@ -1,6 +1,5 @@
 var app = angular.module("myApp", ['ngRoute', 'ngResource', 'checklist-model', 'satellizer']);
 
-
 app.config(function($routeProvider, $locationProvider, $authProvider) {
   $authProvider.facebook({
       clientId: '502444369958873',

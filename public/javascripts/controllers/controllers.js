@@ -12,7 +12,7 @@ app.controller("MainController", function($scope, $http, userService, $routePara
      $scope.authenticate = function(provider) {
        $auth.authenticate(provider)
          .then(function(response) {
-           console.log('You have successfully signed in with ' + provider + '!');
+          //  console.log('You have successfully signed in with ' + provider + '!');
            $location.path('/users')
          })
          .catch(function(error) {
@@ -52,13 +52,12 @@ app.controller("MainController", function($scope, $http, userService, $routePara
 
 });
 
-app.controller('UserController', function($scope, $http, breakService, userService, $routeParams){
+app.controller('UserController', function($http, $scope, $rootScope, $route, $routeParams, $location, $auth, userService){
   userService.validateUser().then(function(result){
   $scope.user = result
-  console.log(result);
-  breakService.getUser().then(function(payload){
-    $scope.users = payload.data;
-  })
+  // breakService.getUser().then(function(payload){
+  //   $scope.users = payload.data;
+  // })
 })
 
 $scope.logout = function(){
