@@ -1,0 +1,85 @@
+@media (max-width: 600px) {
+  .splashTitle{
+    color: black;
+    position: relative;
+    z-index: 2;
+    bottom: 90%;
+    left: 13%;
+    width: 74%;
+  }
+
+  .bodyLayout{
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .bodyText{
+    opacity: .6;
+  }
+
+  .bodyContent{
+    height: 99vh;
+    width: 100vw;
+  }
+
+  .bottomLayout{
+    width: 100vw;
+  }
+
+  .leftContent{
+    height: 30vh;
+    margin-bottom: 15px;
+  }
+
+  .leftBody, .middleBody, .rightBody{
+  }
+
+  .middleContent{
+    height: 30vh;
+    margin-bottom: 15px;
+  }
+
+  .rightContent{
+    height: 30vh;
+    margin-bottom: 15px;
+  }
+
+  .splashPics{
+    margin-top: 20px;
+    border-radius: 50%;
+  }
+  .sideBar{
+    border: 1px solid black;
+    background-color: green;
+    height: 10vh;
+    width: 100vw;
+  }
+  .movesCollection{
+    width: 90%;
+    height: 60%;
+    border: 5px solid black;
+    border-radius: 10%;
+    margin:10px;
+  }
+  .movesRow{
+    height: 50%;
+    width: 80%;
+    margin-left: 20px;
+  }
+  .moveDifficulty{
+    position: absolute;
+    bottom: 70px;
+    left: 140px;
+  }
+  .moveDesc{
+    width: 90%;
+  }
+  .classpic{
+    padding-left: 50px;
+  }
+  .flip-container, .front, .back {
+  	width: 250px;
+  	height: 100px;
+  }
+
+}

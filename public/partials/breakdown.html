@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<div class ='search'>
+  <input class= 'searchbar' type="text" ng-model="pizzle.$" placeholder='Search for a move...'>
+</div>
+<br>
+
+<div class='moves container'>
+  <div class='movesRow row'>
+    <div class ='movesCollection col-sm-4 col-md-4' ng-repeat='move in movesCollection | filter:pizzle | orderBy:sortBy'>
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      	<div class="flipper">
+          <a class ='moveLink' href="{{move.url}}" target="_blank">
+            <div class="front">
+              <!-- front content -->
+              <h4>{{move.name}}</h4>
+              <div>{{move.class}}</div>
+              <img class='classpic' src="images/{{move.picture}}" alt="classPic">
+              <div class='moveDifficulty'>difficulty: {{move.difficulty}}</div>
+            </div>
+            <div class="back">
+              <div class='moveDesc pull-left'>{{move.description}}</div>
+              <!-- back content -->
+            </div>
+          </a>
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class ='user col-xs-5 pull-left' ng-repeat='user in users'>
+  <p>Email: {{user.email}}</p>
+  <p>Password: {{user.password}}</p>
+  <p>Facebook: {{user.fb_id}}</p>
+  <p>Nickname: {{user.nickname}}</p>
+</div> -->

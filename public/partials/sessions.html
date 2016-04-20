@@ -1,0 +1,73 @@
+<br>
+<br>
+<br>
+<br>
+<button class="sessionButton btn btn-success btn-lg" data-toggle="modal" data-target="#myModalNorm">
+    Create A Session
+  </button>
+<br>
+<br>
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close"
+                 data-dismiss="modal">
+                     <span aria-hidden="true">&times;</span>
+                     <span class="sr-only">Close</span>
+              </button>
+              <h3 class="modal-title" id="myModalLabel">
+                  Create A new session
+              </h3>
+          </div>
+            <div class="modal-body">
+              <div class="span4 offset1">
+                <form ng-submit='createSession()'>
+                  <label class="date"for="date"><h3>Date:</h3></label>
+                  <input type="text" name="date" ng-model="session.date" placeholder="6/24/2016">
+                  <button class="btn btn-large btn-success" type='submit' name='button'>Commit to session</button>
+                  <br>
+                  <br>
+                  <div class ='search'>
+                    <input class= 'searchBar' type="text" ng-model="pizzle.$" placeholder='Search for a move...'>
+                  </div>
+                  <br>
+                  <div class='sessionMoves container'>
+                    <div class='sessionMovesRow row'>
+                      <div class ='sessionMovesCollection col-sm-4 col-md-4' ng-repeat='move in movesCollection | filter:pizzle | orderBy:sortBy'>
+                        <input type="checkbox" checklist-model="session.focus" checklist-value="move.name" ng-click='check()'>
+                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        	<div class="flipper">
+                              <div class="front">
+                                <h4>{{move.name}}</h4>
+                                <div>{{move.class}}</div>
+                                <img class='classpic' src="images/{{move.picture}}" alt="classPic">
+                                <div class='moveDifficulty'>difficulty: {{move.difficulty}}</div>
+                              </div>
+                              <div class="back">
+                                <div class='moveDesc pull-left'>{{move.description}}</div>
+                              </div>
+                        	</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+
+
+<div class='session container'>
+  <div class='sessionRow row'>
+    <div class ='sessionCollection col-sm-6 col-md-6' ng-repeat='session in sessionsCollection'>
+        <h1>{{session.date}}</h1>
+        <br>
+        <u><h2>Focus</h2></u>
+        <h3 class = 'sessionFocus'>{{session.focus}}</h3>
+    </div>
+  </div>
+</div>
