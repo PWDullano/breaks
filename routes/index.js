@@ -41,7 +41,6 @@ router.post('/auth/facebook', function(req,res){
         }
           var user = {}
           user.facebook_id = profile.id
-          user.profile_image_url = 'https://graph.facebook.com/'+profile.id+'/picture?type=large'
           user.email = profile.email
           user.first_name = profile.first_name
           user.last_name = profile.last_name

@@ -35,6 +35,7 @@ app.service('userService', function($http){
     var data = JSON.stringify({token : token})
       return $http.post('users', data).then(function(response){
       return response.data
+      console.log(response.data);
       })
     }
 
