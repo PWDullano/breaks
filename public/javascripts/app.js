@@ -16,7 +16,7 @@ app.config(function($routeProvider, $locationProvider, $authProvider) {
         templateUrl: 'partials/dashboard.html',
         controller: 'UserController'
       })
-      .when('/sessions', {
+      .when('/session', {
         templateUrl: 'partials/sessions.html',
         controller: 'SessionController'
       })

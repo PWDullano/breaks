@@ -55,9 +55,6 @@ app.controller("MainController", function($scope, $http, userService, $routePara
 app.controller('UserController', function($http, $scope, $rootScope, $route, $routeParams, $location, $auth, userService){
   userService.validateUser().then(function(result){
   $scope.user = result
-  // breakService.getUser().then(function(payload){
-  //   $scope.users = payload.data;
-  // })
 })
 
 $scope.logout = function(){
@@ -72,7 +69,11 @@ app.controller('MovesController', function($scope, $http, breakService, $routePa
     })
 })
 
-app.controller('SessionController', function($scope, $http, breakService, $routeParams, $window){
+app.controller('SessionController', function($scope, $http, breakService, userService, $routeParams, $window){
+  userService.validateUser().then(function(result){
+  var facebook_id = result.facebook_id
+})
+
   breakService.getSessions().then(function(payload){
     $scope.sessionsCollection = payload.data;
   })
@@ -100,7 +101,7 @@ $scope.session = {
 
 $scope.createSession = function(){
   breakService.newSession($scope.session).then(function(stuff){
-    $window.location.href = '/users/1/sessions';
+    $window.location.href = '/session';
   })
 }
 
