@@ -87,7 +87,7 @@ router.get("/sessions", function(req,res){
 
 router.post('/sessions', function(req, res){
   var session = {}
-  session.facebook_id = req.body.facebook_id;
+  // session.facebook_id = req.body.facebook_id;
   session.date = req.body.date
   session.focus = req.body.focus
   Session().insert(session).then(function(){
