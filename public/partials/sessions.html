@@ -45,7 +45,7 @@
                 <form ng-submit='createSession()'>
                   <label class="date"for="date"><h3>Date:</h3></label>
                   <input type="date" name="date" ng-model="session.date" placeholder="yyyy-MM-dd" required>
-                  <button class="btn btn-large btn-success" type='submit' name='button'>Commit to session</button>
+                  <button class="btn btn-large btn-success" type='submit' name='button' ng-disabled="session.focus.length == 0">Commit to session</button>
                   <br>
                   <br>
                   <div class ='search'>
@@ -55,7 +55,7 @@
                   <div class='sessionMoves container'>
                     <div class='sessionMovesRow row'>
                       <div class ='sessionMovesCollection col-sm-4 col-md-4' data-ng-model="move.selected" ng-repeat='move in movesCollection | filter:pizzle | orderBy:sortBy'>
-                        <input type="checkbox" checklist-model="session.focus" checklist-value="move.name" ng-click='check()' ng-required="isOptionsRequired()">
+                        <input type="checkbox" checklist-model="session.focus" checklist-value="move.name" ng-click='check()'>
                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                         	<div class="flipper">
                               <div class="front">
